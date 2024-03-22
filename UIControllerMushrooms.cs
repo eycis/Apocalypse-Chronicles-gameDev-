@@ -20,7 +20,6 @@ public class UIControllerMushrooms : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //mushroomCountText.text = "Mushrooms: " +mushroomCount;
     }
     
     public void UpdateMushroomCount(int newCount)

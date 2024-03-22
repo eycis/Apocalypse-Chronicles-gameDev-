@@ -31,10 +31,6 @@ public class Healthbar : MonoBehaviour
                 mCurrentValue = health;
                 mCurrentPercent = Mathf.Clamp01((float) mCurrentValue / (float) (max - Min));
             }
-            // if(mCurrentValue <= 0)
-            // {
-                
-            // }
 
             TxtHealth.text = string.Format("{0} %", Mathf.RoundToInt(mCurrentPercent *100));
             ImgHealtBar.fillAmount = mCurrentPercent;

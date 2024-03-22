@@ -21,52 +21,26 @@ public class Mushroom : MonoBehaviour
         {
             return;
         }
-
-        if(fpsController == null)
-        {
-            fpsController = FindObjectOfType<FPSController>();
-            if(fpsController == null)
-            {
-                Debug.LogError("FPSController nenalezen.");
-                return;
-            }
-        }
         float distanceToPlayer = Vector3.Distance(transform.position, fpsController.transform.position);
 
         if(fpsController != null)
         {
             fpsController = FindObjectOfType<FPSController>();
-            //float distanceToPlayer = Vector3.Distance(transform.position, fpsController.transform.position);
             if(distanceToPlayer <= InteractRange)
             {
-                //scoreText.text = "Skóre: " + score;
                 fpsController.CollectMushrooms(pointsToAdd);
                 hasInteracted = true;
                 Destroy(gameObject);
             }
    
         }
-        else
-        {
-            Debug.Log("Vzdálenost: " + distanceToPlayer.ToString("F2") + " jednotek");
-        }
-
-        
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
         fpsController = FindObjectOfType<FPSController>();
-        if(fpsController == null)
-        {
-            Debug.LogError("fps controller nnebyl nalezen.");
-        }
-        
         uiController = FindObjectOfType<UIControllerMushrooms>();
-
-
     }
 
     // Update is called once per frame
@@ -79,12 +53,9 @@ public class Mushroom : MonoBehaviour
             if(Physics.Raycast(ray, out RaycastHit hit))
             {
                 Mushroom mushroom = hit.collider.GetComponent<Mushroom>();
-                //if(hit.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 if(mushroom != null)
                 {
                     mushroom.Interact();
-
-                    //GameObject clickedObject = hit.collider.gameObject;
                 }
             }
         }

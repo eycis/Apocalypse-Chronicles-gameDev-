@@ -54,10 +54,10 @@ public class FPSController : MonoBehaviour
         navPlayer = GetComponent<NavMeshAgent>();
 
         
-        //TESTING:
-        //numberOfStones = 15;
+        TESTING:
+        numberOfStones = 14;
 
-        //numberOfMushrooms = 15;
+        numberOfMushrooms = 15;
         
         
     }
@@ -111,12 +111,12 @@ public class FPSController : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
         
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             EndGame();
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.H))
         {
             ResetGame();
         }
@@ -151,14 +151,12 @@ public class FPSController : MonoBehaviour
 
     void EndGame()
     {
-            Debug.Log("stiskla si q");
             Application.Quit();
             
     }
 
     void ResetGame()
     {
-            Debug.Log("stiskla si r");
             gameManager.RestartGame();
             
     }

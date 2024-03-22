@@ -53,14 +53,12 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool("IsChasing", false);
             Patrolling();
-            attackCount = 0;
         }
 
         if(playerInSightRange && !playerInAttackRange)
         {
             animator.SetBool("IsChasing", true);
             ChasePlayer();
-            attackCount = 0;
         } 
 
         

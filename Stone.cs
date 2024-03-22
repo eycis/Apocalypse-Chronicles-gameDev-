@@ -8,10 +8,10 @@ public class Stone : MonoBehaviour
 {
     private bool hasInteracted = false;
 
-    public int pointsToAdd = 1;
+    private int pointsToAdd = 1;
     private FPSController fpsController;
 
-    public float InteractRange = 5f;
+    private float InteractRange = 5f;
 
     private UIControllerStones uiController;
 
@@ -39,14 +39,6 @@ public class Stone : MonoBehaviour
             hasInteracted = true;
             Destroy(gameObject);
         }  
-        
-        else
-        {
-            Debug.Log("hráč je moc daleko");
-        }
-
-        
-
     }
     // Update is called once per frame
     void Update()
